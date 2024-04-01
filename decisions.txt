@@ -1,0 +1,26 @@
+1./Create-game : api call to initialize the game data to the database table
+2./roll-die/p1 :
+	-- api call the create a random number between 1 to 12 and return the number(rolledNumber).
+	--if number is 12 , update player1 table amount_rem = amount_rem+1
+	--select cost,rent,place from tile_content table where tile_number is the rolledNumber , if rolledNumber > 12 then rolledNumber = rolledNumber-11.
+	--select amount_rem from player1 table.
+	--compare and check if the place is in player2 table.
+	--if available in player2 table then topay = rent(of the current place).
+	--if not available in player2 table then topay = cost(of the currrent place).
+	--check if the amount_rem - topay is positive, If the amount is negative - END GAME - PLAYER 2 WINS !! else if the amount is positive.
+	--update the amount_rem in player1 table.
+	--Also if place(the current place of player 1 )is not available in player2 table under place_owned then update place_owned with "current_place_name"
+	
+3.Now player2 plays his turn- /roll-die/p2 : 
+	-- api call the create a random number between 1 to 12 and return the number(rolledNumber).
+	--if number is 12 , update player2 table amount_rem = amount_rem+1
+	--select cost,rent,place from tile_content table where tile_number is the rolledNumber , if rolledNumber > 12 then rolledNumber = rolledNumber-11.
+	--select amount_rem from player1 table.
+	--compare and check if the place is in player1 table.
+	--if available in player1 table then topay = rent(of the current place).
+	--if not available in player2 table then topay = cost(of the currrent place).
+	--check if the amount_rem - topay is positive, If the amount is negative - END GAME - PLAYER 1 WINS !! else if the amount is positive.
+	--update the amount_rem in player2 table.
+	--Also if place(the current place of player 1 )is not available in player1 table under place_owned then update place_owned with "current_place_name"
+
+4.When the amount of either player goes 0 or negative the game ends and the tables are cleared and the player whose amount is still positive is the Winner.
