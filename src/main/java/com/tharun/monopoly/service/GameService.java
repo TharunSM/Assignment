@@ -3,6 +3,7 @@ package com.tharun.monopoly.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,6 +46,14 @@ public class GameService {
 
 		repo.saveAll(tiles);
 
+	}
+
+	public int rolldice() {
+		Random rand = new Random();
+		int min=1,max=12;
+		int randomnum = rand.nextInt(max - min + 1) + min;
+		return randomnum;
+		
 	}
 
 }

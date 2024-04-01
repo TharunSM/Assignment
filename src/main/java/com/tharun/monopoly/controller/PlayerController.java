@@ -18,16 +18,22 @@ import com.tharun.monopoly.service.GameService;
 
 
 @RestController
-@RequestMapping("/")
-public class GameController {
+@RequestMapping("roll-die")
+public class PlayerController {
 	
 	@Autowired
 	GameService service;
 	
 
-	@GetMapping("create-game/")
-	public String loadData() {
-		service.load();
+	@GetMapping("p1")
+	public String player1Move() {
+		int diceno = service.rolldice();
+		return "";
+	}
+	
+	@GetMapping("p2")
+	public String player2Move() {
+		int diceno = service.rolldice();
 		return "success";
 	}
 

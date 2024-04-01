@@ -1,0 +1,40 @@
+Minimum requirement: 
+-- STS4 with Spring3 support library
+-- PostgreSQL with PgAdmin 4
+-- Postman API - to test the app
+
+----------------------------------------------------
+
+How to run:
+
+1.Import project into STS4
+
+2.Initialize a user in PostgreSQL with username: "postgres" and password: "9840"
+
+3.Create a database called "monopolydb" in postgreSQL or execute the below command in SQL Shell
+
+CREATE DATABASE monopolydb
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_India.1252'
+    LC_CTYPE = 'English_India.1252'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+4.Once db is created start the Springboot app - configured in properties file to port 8080
+
+5.Once the Springboot app is running, we can use services like Postman API to test our given commands
+
+--------------------------------
+
+Note:
+
+please start with http://localhost:8080/create-game/ to initialize the game content
+
+---------------------------
+
+
+Done By THARUN S.M. - https://tharuntech.netlify.app/
