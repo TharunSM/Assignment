@@ -21,6 +21,26 @@ import com.tharun.monopoly.service.GameService;
 @RequestMapping("roll-die")
 public class PlayerController {
 	
+	private static int p1StartAmount;
+	private static int p2StartAmount;
+	
+	public static int getP1StartAmount() {
+		return p1StartAmount;
+	}
+
+	public static void setP1StartAmount(int p1StartAmount) {
+		PlayerController.p1StartAmount = p1StartAmount;
+	}
+
+	public static int getP2StartAmount() {
+		return p2StartAmount;
+	}
+
+	public static void setP2StartAmount(int p2StartAmount) {
+		PlayerController.p2StartAmount = p2StartAmount;
+	}
+
+
 	@Autowired
 	GameService service;
 	

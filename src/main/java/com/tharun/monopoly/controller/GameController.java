@@ -28,6 +28,8 @@ public class GameController {
 	@GetMapping("create-game/")
 	public String loadData() {
 		service.load();
+		PlayerController.setP1StartAmount(1000);
+		PlayerController.setP2StartAmount(1000);
 		return "success";
 	}
 
