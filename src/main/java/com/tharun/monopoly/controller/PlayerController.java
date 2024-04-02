@@ -48,7 +48,14 @@ public class PlayerController {
 	@GetMapping("p1")
 	public String player1Move() {
 		int diceno = service.rolldice();
-		return "";
+		String place=null;
+		boolean placeinp2db=true;
+		if(placeinp2db==false) {
+			return  "Die rolled "+diceno+" and landed on Place "+place+",Unclaimed place and hence bought for $200. Remaining balance is $800";
+		}else {
+			return " Die rolled "+diceno+" and landed on Place "+place+", paid rent $100. Remaining balance is $700.";
+		}
+		
 	}
 	
 	@GetMapping("p2")
